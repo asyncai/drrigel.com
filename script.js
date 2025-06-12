@@ -128,7 +128,7 @@ const observer = new IntersectionObserver(function (entries) {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', function () {
-    const animatedElements = document.querySelectorAll('.expertise-card, .affiliation-card, .achievement-item, .contact-card, .timeline-item');
+    const animatedElements = document.querySelectorAll('.expertise-card, .affiliation-card, .achievement-item, .contact-card, .timeline-item, .consulting-card, .consulting-content');
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -532,8 +532,9 @@ const animationObserver = new IntersectionObserver((entries) => {
 
             // Stagger animations for grid items
             if (entry.target.classList.contains('expertise-grid') ||
-                entry.target.classList.contains('achievement-grid')) {
-                const items = entry.target.querySelectorAll('.expertise-card, .achievement-card');
+                entry.target.classList.contains('achievement-grid') ||
+                entry.target.classList.contains('consulting-grid')) {
+                const items = entry.target.querySelectorAll('.expertise-card, .achievement-card, .consulting-card');
                 items.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('visible');
@@ -564,7 +565,7 @@ function triggerStatsAnimation() {
 document.addEventListener('DOMContentLoaded', () => {
     const animatableElements = document.querySelectorAll(
         '.about-image-wrapper, .about-content, .stats-container, .stat, ' +
-        '.expertise-header, .expertise-grid, .affiliation-item, ' +
+        '.expertise-header, .expertise-grid, .consulting-content, .consulting-grid, .affiliation-item, ' +
         '.gallery-item, .achievement-hero, .achievement-grid'
     );
 

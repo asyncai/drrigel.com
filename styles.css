@@ -547,6 +547,86 @@ p {
   opacity: 0.9;
 }
 
+/* Consulting Section - Professional Cards */
+.consulting {
+  background: #0a0a0a;
+  padding: 5rem 0;
+  position: relative;
+}
+
+.consulting-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out;
+}
+
+.consulting-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.consulting-overview,
+.current-consulting,
+.board-experience {
+  margin-bottom: 4rem;
+}
+
+.consulting-overview h3,
+.current-consulting h3,
+.board-experience h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.consulting-overview p,
+.board-experience p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+}
+
+.consulting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.consulting-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.consulting-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.consulting-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px);
+}
+
+.consulting-card h4 {
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.consulting-card p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
 /* Affiliations - Timeline Style */
 .affiliations {
   position: relative;
@@ -877,6 +957,11 @@ p {
 
   .expertise-grid {
     grid-template-columns: 1fr;
+  }
+
+  .consulting-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .gallery-grid {
