@@ -571,6 +571,43 @@ p {
   margin-bottom: 4rem;
 }
 
+.business-innovation-flex {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.business-innovation-text {
+  flex: 1.5;
+}
+
+.business-innovation-image {
+  flex: 1;
+  text-align: center;
+}
+
+.business-innovation-image img {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.business-innovation-image img:hover {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
 .consulting-overview h3,
 .current-consulting h3,
 .board-experience h3 {
@@ -709,7 +746,7 @@ p {
 .affiliation-image img {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: contain;
   /* filter: grayscale(100%); */
   transition: all 0.5s ease;
 }
@@ -727,7 +764,7 @@ p {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
 }
@@ -751,11 +788,32 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
   transform: scale(1.05);
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: #fff;
+  padding: 1.5rem 1rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.gallery-item:hover .gallery-caption {
+  transform: translateY(0);
 }
 
 /* Achievement Showcase */
@@ -962,6 +1020,16 @@ p {
   .consulting-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .business-innovation-flex {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .business-innovation-text,
+  .business-innovation-image {
+    flex: none;
   }
 
   .gallery-grid {
