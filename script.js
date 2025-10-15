@@ -4,6 +4,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const themeIcon = themeToggle.querySelector('i');
 
+    // Function to update theme-aware images
+    function updateThemeImages() {
+        const isLightTheme = body.classList.contains('light-theme');
+        const themeAwareImages = document.querySelectorAll('.theme-aware-image');
+
+        themeAwareImages.forEach(img => {
+            const lightSrc = img.getAttribute('data-light-src');
+            const darkSrc = img.getAttribute('data-dark-src');
+
+            if (isLightTheme && lightSrc) {
+                img.src = lightSrc;
+            } else if (!isLightTheme && darkSrc) {
+                img.src = darkSrc;
+            }
+        });
+    }
+
     // Check for saved theme preference or default to light theme
     const currentTheme = localStorage.getItem('theme') || 'light';
     if (currentTheme === 'light') {
@@ -11,6 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
     }
+
+    // Update images on initial load
+    updateThemeImages();
 
     // Toggle theme on button click
     themeToggle.addEventListener('click', function () {
@@ -26,6 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
             themeIcon.classList.add('fa-sun');
             localStorage.setItem('theme', 'dark');
         }
+
+        // Update theme-aware images
+        updateThemeImages();
     });
 });
 
