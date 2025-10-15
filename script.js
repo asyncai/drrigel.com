@@ -1,3 +1,34 @@
+// Theme Toggle Functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
+
+    // Check for saved theme preference or default to light theme
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'light') {
+        body.classList.add('light-theme');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function () {
+        body.classList.toggle('light-theme');
+
+        // Update icon
+        if (body.classList.contains('light-theme')) {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        } else {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+});
+
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
@@ -6,12 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Toggle mobile menu
     hamburger.addEventListener('click', function () {
+        const isExpanded = hamburger.classList.contains('active');
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
 
+        // Update aria-expanded attribute
+        hamburger.setAttribute('aria-expanded', !isExpanded);
+
         // Animate hamburger bars
         const bars = hamburger.querySelectorAll('.bar');
-        if (hamburger.classList.contains('active')) {
+        if (!isExpanded) {
             bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
             bars[1].style.opacity = '0';
             bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
@@ -27,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function () {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
 
             // Reset hamburger bars
             const bars = hamburger.querySelectorAll('.bar');
@@ -44,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
 
             // Reset hamburger bars
             const bars = hamburger.querySelectorAll('.bar');
@@ -73,19 +110,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar Background on Scroll
-window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    const scrolled = window.pageYOffset;
-
-    if (scrolled > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-});
+// Navbar Background on Scroll - Handled by CSS classes now
+// (Removed hardcoded background colors to respect theme variables)
 
 // Active Navigation Link Highlighting
 window.addEventListener('scroll', function () {
@@ -299,22 +325,8 @@ function debounce(func, wait) {
     };
 }
 
-// Apply debouncing to scroll events
-const debouncedScrollHandler = debounce(function () {
-    // Navbar background change
-    const navbar = document.querySelector('.navbar');
-    const scrolled = window.pageYOffset;
-
-    if (scrolled > 50) {
-        navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-        navbar.style.boxShadow = 'none';
-    }
-}, 10);
-
-window.addEventListener('scroll', debouncedScrollHandler);
+// Apply debouncing to scroll events - Now handled by CSS classes
+// (Removed hardcoded background colors to respect theme variables)
 
 // Print functionality
 function printPage() {
@@ -566,7 +578,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const animatableElements = document.querySelectorAll(
         '.about-image-wrapper, .about-content, .stats-container, .stat, ' +
         '.expertise-header, .expertise-grid, .consulting-content, .consulting-grid, .affiliation-item, ' +
-        '.gallery-item, .achievement-hero, .achievement-grid'
+        '.gallery-item, .achievement-hero, .achievement-grid, .contact-card'
     );
 
     animatableElements.forEach(el => animationObserver.observe(el));
@@ -608,43 +620,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Custom Cursor (Desktop only)
-if (window.matchMedia('(min-width: 768px)').matches) {
-    const cursor = document.createElement('div');
-    cursor.className = 'custom-cursor';
-    document.body.appendChild(cursor);
-
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    // Smooth cursor animation
-    function animateCursor() {
-        const dx = mouseX - cursorX;
-        const dy = mouseY - cursorY;
-
-        cursorX += dx * 0.1;
-        cursorY += dy * 0.1;
-
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-
-        requestAnimationFrame(animateCursor);
-    }
-
-    animateCursor();
-
-    // Cursor hover effects
-    const hoverElements = document.querySelectorAll('a, button, .btn');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-    });
-}
+// Custom Cursor removed for cleaner UX
 
 // Lazy Loading Images
 const imageObserver = new IntersectionObserver((entries) => {

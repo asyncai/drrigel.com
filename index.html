@@ -7,6 +7,98 @@
     <title>Dr. Darrell S. Rigel, MD, MS - Leading Dermatologist & Melanoma Expert</title>
     <meta name="description"
         content="Dr. Darrell S. Rigel is a world-renowned dermatologist, co-creator of the ABCDE melanoma detection method, and Adjunct Clinical Professor at UT Southwestern. Expert in skin cancer, melanoma, and dermatologic surgery.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="dermatologist, melanoma expert, ABCDE method, skin cancer, dermatologic surgery, Dr. Darrell Rigel, Cooper Clinic, UT Southwestern, NYU Langone">
+    <meta name="author" content="Dr. Darrell S. Rigel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://drrigel.com/">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dr. Darrell S. Rigel, MD, MS - Leading Dermatologist & Melanoma Expert">
+    <meta property="og:description" content="World-renowned dermatologist and co-creator of the ABCDE melanoma detection method. Expert in skin cancer research and treatment.">
+    <meta property="og:url" content="https://drrigel.com/">
+    <meta property="og:image" content="https://drrigel.com/images/dr-rigel.png">
+    <meta property="og:site_name" content="Dr. Darrell S. Rigel">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Darrell S. Rigel, MD, MS - Leading Dermatologist & Melanoma Expert">
+    <meta name="twitter:description" content="World-renowned dermatologist and co-creator of the ABCDE melanoma detection method.">
+    <meta name="twitter:image" content="https://drrigel.com/images/dr-rigel.png">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Physician",
+        "name": "Dr. Darrell S. Rigel",
+        "honorificPrefix": "Dr.",
+        "givenName": "Darrell",
+        "additionalName": "S.",
+        "familyName": "Rigel",
+        "honorificSuffix": "MD, MS",
+        "jobTitle": "Dermatologist",
+        "description": "World-renowned dermatologist and co-creator of the ABCDE melanoma detection method",
+        "url": "https://drrigel.com",
+        "image": "https://drrigel.com/images/dr-rigel.png",
+        "medicalSpecialty": ["Dermatology", "Skin Cancer", "Melanoma", "Dermatologic Surgery"],
+        "alumniOf": [
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "Massachusetts Institute of Technology",
+                "sameAs": "https://www.mit.edu"
+            },
+            {
+                "@type": "MedicalSchool",
+                "name": "George Washington University School of Medicine",
+                "sameAs": "https://smhs.gwu.edu"
+            }
+        ],
+        "worksFor": [
+            {
+                "@type": "MedicalOrganization",
+                "name": "Cooper Clinic",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "12200 Preston Road, Suite 101",
+                    "addressLocality": "Dallas",
+                    "addressRegion": "TX",
+                    "postalCode": "75230",
+                    "addressCountry": "US"
+                },
+                "telephone": "+1-972-560-2667"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "UT Southwestern Medical Center",
+                "sameAs": "https://www.utsouthwestern.edu"
+            },
+            {
+                "@type": "CollegeOrUniversity",
+                "name": "NYU Langone Health",
+                "sameAs": "https://nyulangone.org"
+            }
+        ],
+        "award": [
+            "American Academy of Dermatology Gold Medal",
+            "MIT George B. Morgan Award",
+            "Melanoma Research Foundation Humanitarian Award"
+        ],
+        "knowsAbout": ["Melanoma Detection", "Skin Cancer Research", "Dermatologic Surgery", "ABCDE Method"],
+        "telephone": "+1-972-560-2667",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "12200 Preston Road, Suite 101",
+            "addressLocality": "Dallas",
+            "addressRegion": "TX",
+            "postalCode": "75230",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -15,29 +107,34 @@
 
 <body>
     <!-- Loading Screen -->
-    <div class="loader">
+    <div class="loader" aria-hidden="true">
         <div class="loader-text">Darrell S. Rigel, MD, MS</div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <h2>Dr. Rigel</h2>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#expertise" class="nav-link">Expertise</a>
-                <a href="#consulting" class="nav-link">Consulting</a>
-                <a href="#affiliations" class="nav-link">Affiliations</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <div class="nav-menu" id="nav-menu" role="menu">
+                <a href="#home" class="nav-link" role="menuitem">Home</a>
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#expertise" class="nav-link" role="menuitem">Expertise</a>
+                <a href="#consulting" class="nav-link" role="menuitem">Consulting</a>
+                <a href="#affiliations" class="nav-link" role="menuitem">Affiliations</a>
+                <a href="#achievements" class="nav-link" role="menuitem">Achievements</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
             </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                    <span class="bar" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -65,7 +162,8 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section-immersive">
+    <main id="main-content">
+    <section id="about" class="about section-immersive" aria-labelledby="about-title">
         <div class="container">
             <div class="about-container">
                 <div class="about-image-wrapper">
@@ -73,7 +171,7 @@
                         class="about-image">
                 </div>
                 <div class="about-content">
-                    <h2 class="about-title">A Life Dedicated to Saving Lives</h2>
+                    <h2 class="about-title" id="about-title">A Life Dedicated to Saving Lives</h2>
                     <div class="about-text">
                         <p class="lead">
                             Dr. Darrell S. Rigel is a world leader in dermatology, recognized globally for his
@@ -96,17 +194,17 @@
                             journals.
                         </p>
                     </div>
-                    <div class="stats-container">
+                    <div class="stats-container" role="region" aria-label="Professional statistics">
                         <div class="stat">
-                            <span class="stat-number" data-value="40">0</span>
+                            <span class="stat-number" data-value="40" aria-label="40 plus years of experience">0</span>
                             <div class="stat-label">Years</div>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" data-value="1000">0</span>
+                            <span class="stat-number" data-value="1000" aria-label="Over 1000 presentations">0</span>
                             <div class="stat-label">Presentations</div>
                         </div>
                         <div class="stat">
-                            <span class="stat-number" data-value="305">0</span>
+                            <span class="stat-number" data-value="305" aria-label="Over 305 publications">0</span>
                             <div class="stat-label">Publications</div>
                         </div>
                     </div>
@@ -116,10 +214,10 @@
     </section>
 
     <!-- Expertise Section -->
-    <section id="expertise" class="expertise">
+    <section id="expertise" class="expertise" aria-labelledby="expertise-title">
         <div class="container">
             <div class="expertise-header">
-                <h2>Areas of Expertise</h2>
+                <h2 id="expertise-title">Areas of Expertise</h2>
                 <p class="lead">Specialized care in dermatology, skin cancer, and melanoma detection</p>
             </div>
             <div class="expertise-grid">
@@ -492,62 +590,51 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section-immersive">
+    <section id="contact" class="contact section-immersive" aria-labelledby="contact-title">
         <div class="section-bg">
             <div class="section-overlay"></div>
         </div>
         <div class="section-content">
             <div class="container">
                 <div class="expertise-header">
-                    <h2>Contact Dr. Rigel</h2>
+                    <h2 id="contact-title">Contact Dr. Rigel</h2>
                     <p class="lead">Connect for consultations and professional inquiries</p>
                 </div>
-                <div class="contact-grid"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                    <div
-                        style="background: rgba(255,255,255,0.05); padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: #fff; margin-bottom: 1.5rem;">Cooper Clinic</h3>
-                        <div style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Cooper Clinic</h3>
+                        <div class="contact-details">
                             <p><i class="fas fa-map-marker-alt"></i> 12200 Preston Road, Suite 101<br>Dallas, TX 75230
                             </p>
                             <p><i class="fas fa-phone"></i> (972) 560-2667</p>
                             <p><i class="fas fa-globe"></i> <a href="https://www.cooperaerobics.com/cooper-clinic/"
-                                    target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none;">Cooper
-                                    Clinic</a></p>
+                                    target="_blank">Cooper Clinic</a></p>
                         </div>
                     </div>
-                    <div
-                        style="background: rgba(255,255,255,0.05); padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: #fff; margin-bottom: 1.5rem;">Private Practice</h3>
-                        <div style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <div class="contact-card">
+                        <h3>Private Practice</h3>
+                        <div class="contact-details">
                             <p><i class="fas fa-map-marker-alt"></i> 35 E 35th Street, Room 208<br>New York, NY 10016
                             </p>
                             <p><i class="fas fa-phone"></i> (212) 684-5964</p>
                             <p><i class="fas fa-fax"></i> (212) 689-5748</p>
                         </div>
                     </div>
-                    <div
-                        style="background: rgba(255,255,255,0.05); padding: 2rem; border: 1px solid rgba(255,255,255,0.1);">
-                        <h3 style="color: #fff; margin-bottom: 1.5rem;">Professional Links</h3>
-                        <div style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <div class="contact-card">
+                        <h3>Professional Links</h3>
+                        <div class="contact-details">
                             <p><i class="fab fa-linkedin"></i> <a
-                                    href="https://www.linkedin.com/in/darrell-s-rigel-md-ms-70a12a30/" target="_blank"
-                                    style="color: rgba(255,255,255,0.7); text-decoration: none;">LinkedIn Profile</a>
+                                    href="https://www.linkedin.com/in/darrell-s-rigel-md-ms-70a12a30/" target="_blank">LinkedIn Profile</a>
                             </p>
                             <p><i class="fas fa-hospital"></i> <a
                                     href="https://cme.utsouthwestern.edu/rss-107-2025/node/134490/bio/95812/view"
-                                    target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none;">UT
-                                    Southwestern
-                                    Profile</a></p>
+                                    target="_blank">UT Southwestern Profile</a></p>
                             <p><i class="fas fa-university"></i> <a
-                                    href="https://nyulangone.org/doctors/1740217033/darrell-s-rigel" target="_blank"
-                                    style="color: rgba(255,255,255,0.7); text-decoration: none;">NYU Langone Profile</a>
+                                    href="https://nyulangone.org/doctors/1740217033/darrell-s-rigel" target="_blank">NYU Langone Profile</a>
                             </p>
                             <p><i class="fas fa-hospital"></i> <a
                                     href="https://www.cooperaerobics.com/cooper-clinic/Our-Physicians-Darrell-Rigel-MS-MD/"
-                                    target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none;">Cooper
-                                    Clinic
-                                    Profile</a>
+                                    target="_blank">Cooper Clinic Profile</a>
                             </p>
                         </div>
                     </div>
@@ -555,9 +642,10 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <p>&copy; 2025 Dr. Darrell S. Rigel. All rights reserved.</p>
             <div class="footer-links">
